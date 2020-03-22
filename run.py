@@ -1,6 +1,7 @@
+import asyncio
+
 from downloader import Downloader
 from overwatch.crawler import Crawler
-import asyncio
 
 
 async def main():
