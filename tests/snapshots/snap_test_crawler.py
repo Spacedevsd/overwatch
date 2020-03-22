@@ -27,6 +27,14 @@ snapshots['test_crawler 1'] = [
                 'name': 'Estimulante'
             }
         ],
+        'bio': {
+            'affiliation': 'Overwatch (anteriormente)',
+            'age': '60',
+            'base': 'Cairo, Egito',
+            'occupation': 'Caçadora de recompensa',
+            'realname': 'Ana Amari',
+            'story': 'Uma das fundadoras de Overwatch, Ana usa suas habilidades e seu conhecimento para defender seu lar e as pessoas que ela ama.Como a Crise Ômnica teve um peso muito grande para o Egito, as forças de segurança esvaziadas e sem pessoal do país se apoiaram nos franco-atiradores de elite. Entres eles, Ana Amari, que era considerada por muitos a melhor do mundo. Sua destreza com as armas, tomada rápida de decisões e instintos, fizeram dela uma seleção natural para se juntar à força de ataque de Overwatch que terminou a guerra.Seguindo o sucesso da missão original de Overwatch, Ana serviu muitos anos como a Segunda no Comando para o Comandante de Ataque Morrison. Apesar de suas grandes responsabilidades liderando a organização, Ana se recusou a deixar as operações de combate. Ela continuou ativa até seus cinquenta anos de idade, até acreditarem que ela morreu nas mãos de uma agente da Talon conhecida como “Widowmaker”,  durante uma missão de resgate de reféns.Na verdade, Ana sobreviveu a esse encontro, mesmo que gravemente ferida e tendo perdido seu olho direito. Durante sua recuperação, ela sentiu o peso de uma vida gasta no combate e decidiu permanecer distante dos conflitos mundiais que se alargavam. Entretanto, com o passar do tempo, ela se deu conta de que não podia fazer nada enquanto sua cidade e as pessoas inocentes ao seu redor eram ameaçados por outros.Agora, Ana voltou à luta para proteger seu país das forças que poderiam desestabilizá-lo; e mais importante, para manter sua família e seus aliados mais próximos em segurança.'
+        },
         'description': 'O arsenal versátil de Ana permite que ela afete heróis em todo o campo de batalha. Os tiros de seu Rifle Biótico e as Granadas Bióticas curam aliados e prejudicam inimigos. Sua arma de mão neutralizam alvos importantes e o Estimulante concede a um aliado um grande aumento de poder.',
         'difficulty': 3,
         'name': 'Ana',
@@ -51,6 +59,16 @@ snapshots['test_crawler 1'] = [
                 'name': 'Cair Matando'
             }
         ],
+        'bio': {
+            'affiliation': 'Junkers (anteriormente)',
+            'age': '48',
+            'base': 'Junkertown, Austrália (anteriormente)',
+            'occupation': 'Executor (anteriormente), Guarda-costas',
+            'realname': 'Mako Rutledge',
+            'story': '''Roadhog é um matador sanguinário com uma reputação merecida por crueldade e destruição gratuita.Após a Crise Ômnica, oficiais do governo entregaram o omnium australiano e as terras nos arredores aos ômnicos que quase destruíram o país, na esperança de estabelecer um acordo de paz duradouro. Esse acordo de paz desalojou permanentemente Mako Rutledge e um grande número de residentes da área: um conjunto de sobreviventes, fazendeiros solares e pessoas que só queriam ficar em paz.
+Furiosos com a perda de seus lares, Mako e outros residentes recorreram a uma rebelião violenta. Eles formaram a Frente de Liberação Australiana e atacaram o omnium e sua população robô para tomar de volta as terras que tinham sido roubadas deles. Os eventos continuaram a ganhar maiores proporções até que a FLA sabotou o núcleo de fusão do omnium, resultando em uma explosão que destruiu o omnium, irradiou os arredores e sucateou o Deserto Australiano com metal retorcido e destroços por quilômetros.
+Mako viu seu lar se tornar uma terra devastada apocalíptica e isso o mudou para sempre.Adaptando-se a seu ambiente, ele pôs uma máscara e partiu pelas autoestradas quebradas do Deserto Australiano em sua moto decrépita. Aos poucos, sua humanidade foi esquecida. Os últimos vestígios de Mako desapareceram e nasceu o matador impiedoso, Roadhog. '''
+        },
         'description': 'Roadhog usa sua famosa Corrente de Gancho para puxar seus inimigos para perto antes de estraçalhá-los com as explosões de sua Arma de Sucata. Ele é tanque o suficiente para suportar uma grande quantidade de dano e pode recuperar sua vida com uma respiração.',
         'difficulty': 1,
         'name': 'Roadhog',
@@ -84,3 +102,12 @@ snapshots['test_extract_abilities 1'] = [
 ]
 
 snapshots['test_extract_difficulty 1'] = 3
+
+snapshots['test_extract_bio_from_reppear_hero 1'] = {
+    'affiliation': 'Desconhecida',
+    'age': 'Desconhecida',
+    'base': 'Desconhecida',
+    'occupation': 'Mercenário',
+    'realname': 'Desconhecido',
+    'story': 'Há quem fale sobre um terrorista em um manto preto, conhecido apenas como Reaper. Sua identidade e motivações são um mistério. O que se sabe é que onde ele aparece, a morte o segue.O Reaper é um mercenário extremamente volátil, um matador sem remorso ou piedade, responsável por ataques terroristas ao redor do mundo. Ele lutou em muitos conflitos armados nas últimas décadas, sem demonstrar qualquer lealdade a nenhuma causa ou organização.Sobreviventes descreveram uma sombra negra, vagando como fantasma pelos campos de batalha mais infernais. Os poucos corpos recuperados daqueles que ele assassinou são pálidos, vazios e sem vida, com suas células apresentando sinais intensos de degradação. É possível que ele seja o resultado da falha de um experimento genético, que força suas células a se degenerarem e regenerarem simultaneamente, em uma velocidade ultra acelerada.Aqueles que têm tentado rastrear seus movimentos começaram a enxergar um padrão em suas aparições. Eles acreditam que Reaper está caçando antigos agentes da Overwatch e os eliminando sistematicamente.'
+}
