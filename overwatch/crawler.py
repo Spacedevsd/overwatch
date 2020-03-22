@@ -3,6 +3,7 @@ from urllib.parse import urljoin
 from db import db
 
 from .parser import Parser
+from contextlib import suppress
 
 
 class Crawler:
@@ -16,12 +17,10 @@ class Crawler:
         response = await self.downloader.get(self.default_url)
         params = self.parser.extract_url_params(response)
 
-        try:
+        with suppress(StopAsyncIteration):
             for param in params:
                 response_hero = await self.get_hero_page(param)
                 self._heroes.append(self.parser.parse(response_hero))
-        except StopIteration:
-            pass
 
         return self
 
