@@ -12,13 +12,13 @@ class Crawler:
         self.parser = Parser()
         self._heroes = []
 
-    def download(self):
-        response = self.downloader.get(self.default_url)
+    async def download(self):
+        response = await self.downloader.get(self.default_url)
         params = self.parser.extract_url_params(response)
 
         try:
             for param in params:
-                response_hero = self.get_hero_page(param)
+                response_hero = await self.get_hero_page(param)
                 self._heroes.append(self.parser.parse(response_hero))
         except StopIteration:
             pass
@@ -28,6 +28,6 @@ class Crawler:
     def save(self):
         db["heroes"].insert_many(self._heroes)
 
-    def get_hero_page(self, param):
+    async def get_hero_page(self, param):
         url = urljoin(self.default_url, param["href"])
-        return self.downloader.get(url)
+        return await self.downloader.get(url)

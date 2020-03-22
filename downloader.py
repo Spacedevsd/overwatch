@@ -6,10 +6,10 @@ Response = namedtuple("Response", ["text", "status_code", "url"])
 
 class Downloader:
     def __init__(self):
-        self.downloader = httpx.Client()
+        self.downloader = httpx.AsyncClient()
 
-    def get(self, url, params=None):
-        response = self.downloader.get(url, params=params)
+    async def get(self, url, params=None):
+        response = await self.downloader.get(url, params=params)
 
         response.raise_for_status()
 
