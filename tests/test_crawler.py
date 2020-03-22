@@ -56,3 +56,17 @@ def test_extract_difficulty(hero_html, snapshot):
     parser = Parser()
     parsed = parser.extract_difficulty(response)
     snapshot.assert_match(parsed)
+
+
+def test_extract_bio(hero_html, snapshot):
+    response = BeautifulSoup(hero_html, "html.parser")
+    parser = Parser()
+    parsed = parser.extract_bio(response)
+    snapshot.assert_match(parsed)
+
+
+def test_extract_bio_from_reppear_hero(hero3_html, snapshot):
+    response = BeautifulSoup(hero3_html, "html.parser")
+    parser = Parser()
+    parsed = parser.extract_bio(response)
+    snapshot.assert_match(parsed)
