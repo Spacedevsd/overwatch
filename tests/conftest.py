@@ -21,3 +21,8 @@ def hero2_html():
 @pytest.fixture
 def hero3_html():
     return load_mockup("hero3.html")
+
+
+@pytest.fixture
+def ashe_html():
+    return load_mockup("ashe.html")

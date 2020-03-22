@@ -70,3 +70,10 @@ def test_extract_bio_from_reppear_hero(hero3_html, snapshot):
     parser = Parser()
     parsed = parser.extract_bio(response)
     snapshot.assert_match(parsed)
+
+
+def test_extract_bio_from_ashe_hero(ashe_html, snapshot):
+    response = BeautifulSoup(ashe_html, "html.parser")
+    parser = Parser()
+    parsed = parser.extract_bio(response)
+    snapshot.assert_match(parsed)
