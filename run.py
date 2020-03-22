@@ -10,8 +10,8 @@ async def main():
     page = "pt-br/heroes"
 
     crawler = Crawler(default_url, downloader, page)
-    content = await crawler.download()
-    content.save()
+    await crawler.download()
+    crawler.save()
 
 
 if __name__ == "__main__":

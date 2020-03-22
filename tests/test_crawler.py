@@ -19,8 +19,8 @@ async def test_crawler(downloader_mock, heroes_html, hero_html, hero2_html, snap
     downloader.get.side_effect = [html1, html2, html3]
 
     crawler = Crawler(default_url, downloader, "pt-br/heroes")
-    content = await crawler.download()
-    snapshot.assert_match(content._heroes)
+    await crawler.download()
+    snapshot.assert_match(crawler._heroes)
 
 
 def test_extract_name(hero_html, snapshot):
