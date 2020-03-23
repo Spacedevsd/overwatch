@@ -43,8 +43,8 @@ class Parser:
 
     def extract_bio(self, response):
         content = response.find("li", class_="name").span
-        _ , realname, _ , age = re.search(GET_REAL_NAME_AND_AGE, content.text).groups()
-        
+        _, realname, _, age = re.search(GET_REAL_NAME_AND_AGE, content.text).groups()
+
         occupation = self._normalize_extract_content(
             response.find("li", class_="occupation")
         )
