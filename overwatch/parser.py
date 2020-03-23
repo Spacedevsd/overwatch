@@ -1,7 +1,7 @@
 import re
 from bs4 import BeautifulSoup
 
-GET_REAL_NAME_AND_AGE = r":\s(.+)\,.+:\s?(\d{1,3}|\w+)"
+GET_REAL_NAME_AND_AGE = r"(.+:\s+|)(.+),\s+(.+:)\s+(\w+)"
 
 
 class Parser:
@@ -43,7 +43,8 @@ class Parser:
 
     def extract_bio(self, response):
         content = response.find("li", class_="name").span
-        realname, age = re.search(GET_REAL_NAME_AND_AGE, content.text).groups()
+        _ , realname, _ , age = re.search(GET_REAL_NAME_AND_AGE, content.text).groups()
+        
         occupation = self._normalize_extract_content(
             response.find("li", class_="occupation")
         )
