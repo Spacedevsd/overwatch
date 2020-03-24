@@ -12,9 +12,9 @@ testupdate:
 
 .PHONY: format
 format:
-	@black overwatch tests/test_crawler.py tests/util.py
+	@black overwatch tests --exclude="/snapshots"
 
 .PHONY: checkformat
 checkformat:
-	@black overwatch tests/test_crawler.py tests/util.py --check
+	@black overwatch tests --check --exclude="/snapshots"
 
