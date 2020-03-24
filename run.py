@@ -1,17 +1,16 @@
 import asyncio
+from importlib import import_module
 
 from downloader import Downloader
-from overwatch.crawler import Crawler
 
 
 async def main():
+    module = "maps"
     default_url = "https://playoverwatch.com"
-    downloader = Downloader()
-    page = "pt-br/heroes"
 
-    crawler = Crawler(default_url, downloader, page)
-    await crawler.download()
-    crawler.save()
+    crawler = import_module(f"overwatch.{module}")
+    c = crawler.Crawler(default_url, Downloader(), "maps")
+    await c.init()
 
 
 if __name__ == "__main__":
