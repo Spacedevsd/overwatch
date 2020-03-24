@@ -37,8 +37,6 @@ snapshots['test_crawler 1'] = [
         },
         'description': 'O arsenal versátil de Ana permite que ela afete heróis em todo o campo de batalha. Os tiros de seu Rifle Biótico e as Granadas Bióticas curam aliados e prejudicam inimigos. Sua arma de mão neutralizam alvos importantes e o Estimulante concede a um aliado um grande aumento de poder.',
         'difficulty': 3,
-        'maps': [
-        ],
         'name': 'Ana',
         'role': 'Suporte'
     },
@@ -73,8 +71,6 @@ Mako viu seu lar se tornar uma terra devastada apocalíptica e isso o mudou para
         },
         'description': 'Roadhog usa sua famosa Corrente de Gancho para puxar seus inimigos para perto antes de estraçalhá-los com as explosões de sua Arma de Sucata. Ele é tanque o suficiente para suportar uma grande quantidade de dano e pode recuperar sua vida com uma respiração.',
         'difficulty': 1,
-        'maps': [
-        ],
         'name': 'Roadhog',
         'role': 'Tanque'
     }
