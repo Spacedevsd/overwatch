@@ -2,6 +2,10 @@
 test:
 	@pytest ./tests -vv
 
+.PHONY: run
+run:
+	@python run.py
+
 .PHONY: testupdate
 testupdate:
 	@pytest --snapshot-update
