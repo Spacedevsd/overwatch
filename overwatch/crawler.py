@@ -1,6 +1,6 @@
 from urllib.parse import urljoin
 
-from db import Db
+from db import DB
 
 from .parser import Parser
 from contextlib import suppress
@@ -23,11 +23,10 @@ class Crawler:
                 self._heroes.append(self.parser.parse(response_hero))
 
     def save(self):
-        database = Db()
-        for hero in self._heroes:
-            print(f"{hero['name']} has been saved!")
-            database.insert(hero)
-        database.close()
+        with DB() as database:
+            for hero in self._heroes:
+                database.heroes.insert(hero)
+                print(f"{hero['name']} has been saved!")
 
     async def get_hero_page(self, param):
         url = urljoin(self.default_url, param["href"])

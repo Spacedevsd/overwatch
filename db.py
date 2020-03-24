@@ -1,15 +1,23 @@
 from pymongo import MongoClient
 
 
-class Db:
+class DB:
     def __init__(self, host="localhost", port="27017"):
-        self._client = MongoClient(f"mongodb://{host}:{port}")
-        self._db = self._client.overwatch
+        self.host = host
+        self.port = port
+        self.session = None
 
-    def insert(self, instance):
-        if not isinstance(instance, dict):
-            raise TypeError("The instance should be a dict type")
-        self._db["heroes"].insert(instance)
+    def __enter__(self):
+        if self.session is not None:
+            raise RuntimeError("Already connected")
+        self.session = MongoClient(f"mongodb://{self.host}:{self.port}")
+        return self.session.overwatch
 
-    def close(self):
-        self._client.close()
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.session.close()
+        self.session = None
+
+    # def save(self, instance):
+    #     if not isinstance(instance, dict):
+    #         raise TypeError("The instance should be a dict type")
+    #     self.session.overwatch["heroes"].insert(instance)
