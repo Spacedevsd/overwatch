@@ -14,6 +14,7 @@ class Parser:
             "abilities": self.extract_abilities(html),
             "difficulty": self.extract_difficulty(html),
             "bio": self.extract_bio(html),
+            "maps": self.extract_map_info(html),
         }
 
     def extract_name(self, response):
