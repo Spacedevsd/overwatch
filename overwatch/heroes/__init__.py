@@ -1,9 +1,12 @@
 from .crawler import Crawler as BaseCrawler
+from config import load
+
+configuration = load()
 
 
 class Crawler:
-    def __init__(self, default_url, downloader):
-        self.default_url = default_url
+    def __init__(self, downloader):
+        self.default_url = configuration.get("app", "default_url")
         self.downloader = downloader
         self.page = "pt-br/heroes"
 

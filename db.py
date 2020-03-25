@@ -1,16 +1,17 @@
 from pymongo import MongoClient
 from configparser import ConfigParser
+from config import load
+
+configuration = load()
 
 
 class DB:
     def __init__(self):
-        self.config = ConfigParser()
-        self.config.read("database.ini")
         self.session = None
 
     def __enter__(self):
-        _host = self.config.get("development", "host")
-        _port = self.config.get("development", "port")
+        _host = configuration.get("database", "host")
+        _port = configuration.get("database", "port")
 
         if self.session is not None:
             raise RuntimeError("Already connected")

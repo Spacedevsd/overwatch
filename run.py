@@ -10,10 +10,8 @@ async def main():
     parser.add_argument("crawler", choices=["maps", "heroes"])
     parsed = parser.parse_args()
 
-    default_url = "https://playoverwatch.com"
-
     crawler = importlib.import_module(f"overwatch.{parsed.crawler}")
-    c = crawler.Crawler(default_url, Downloader())
+    c = crawler.Crawler(Downloader())
     await c.init()
 
 
