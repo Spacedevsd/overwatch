@@ -1,15 +1,19 @@
+import argparse
 import asyncio
-from importlib import import_module
+import importlib
 
 from downloader import Downloader
 
 
 async def main():
-    module = "maps"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("crawler", choices=["maps", "heroes"])
+    parsed = parser.parse_args()
+
     default_url = "https://playoverwatch.com"
 
-    crawler = import_module(f"overwatch.{module}")
-    c = crawler.Crawler(default_url, Downloader(), "maps")
+    crawler = importlib.import_module(f"overwatch.{parsed.crawler}")
+    c = crawler.Crawler(default_url, Downloader())
     await c.init()
 
 
